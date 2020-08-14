@@ -10,5 +10,5 @@ import Foundation
 
 class Pokemon {
     var name: String = ""
-    var id: IntegerLiteralType = -1
+    var id: String = "00"
 }

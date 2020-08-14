@@ -38,7 +38,7 @@ class PokedexViewController: UITableViewController {
         if let JSON = rootJSON as? [String: Any] {
             print("attempting to parse")
             let pokemon = Pokemon()
-            pokemon.id = (JSON["id"] as? Int)!
+            pokemon.id = (JSON["id"] as? String)!
             pokemon.name = (JSON["name"] as? String)!
             pokemonArray.append(pokemon)
             print("Pokemon Name" + pokemon.name)
@@ -58,7 +58,8 @@ class PokedexViewController: UITableViewController {
         let pokemon = pokemonArray[indexPath.row]
         
         print(pokemon.name)
-        
+       // "http://img.pokemondb.net/artwork/{pokemon.name}.jpg"
+       
         cell.textLabel?.text = pokemon.name
         
         return cell
@@ -67,4 +68,18 @@ class PokedexViewController: UITableViewController {
 
 extension UICollectionView {
     
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

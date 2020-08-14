@@ -8,7 +8,15 @@
 
 import Foundation
 
-class Pokemon {
-    var name: String = ""
-    var id: String = "00"
+struct Pokemon {
+    
+    var name: String
+    var id: Int
+    var image: String
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+        self.image = "http://img.pokemondb.net/artwork/\(self.name.lowercased().replacingOccurrences(of: ".", with: "-").replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "♀", with: "-f").replacingOccurrences(of: "♂", with: "-m")).jpg"
+    }
 }

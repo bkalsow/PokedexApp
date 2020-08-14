@@ -113,7 +113,7 @@ extension PokedexViewController : UISearchBarDelegate {
     }
 }
 
-//Mark: Image View Methods
+//MARK: Image View Methods
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in

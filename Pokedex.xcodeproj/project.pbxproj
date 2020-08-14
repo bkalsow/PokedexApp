@@ -16,6 +16,7 @@
 		CDB3187A24E6DFF2006B43EB /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3187924E6DFF2006B43EB /* PokemonCollectionViewCell.swift */; };
 		CDB3187D24E6EBA5006B43EB /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3187C24E6EBA5006B43EB /* PokemonTableViewCell.swift */; };
 		CDB3188024E6F8AE006B43EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB3187E24E6F8AD006B43EB /* LaunchScreen.storyboard */; };
+		CDB3188224E6FAFB006B43EB /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB3188124E6FAFB006B43EB /* PokemonManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CDB3187B24E6E27B006B43EB /* pokemon_names.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pokemon_names.json; sourceTree = "<group>"; };
 		CDB3187C24E6EBA5006B43EB /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		CDB3187F24E6F8AD006B43EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Pokedex/Supporting Files/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		CDB3188124E6FAFB006B43EB /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				CDB3187B24E6E27B006B43EB /* pokemon_names.json */,
 				CDB3185F24E5CE10006B43EB /* PokedexViewController.swift */,
+				CDB3188124E6FAFB006B43EB /* PokemonManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB3186024E5CE10006B43EB /* PokedexViewController.swift in Sources */,
+				CDB3188224E6FAFB006B43EB /* PokemonManager.swift in Sources */,
 				CDB3187224E6BA2C006B43EB /* Pokemon.swift in Sources */,
 				CDB3185C24E5CE10006B43EB /* AppDelegate.swift in Sources */,
 				CDB3187D24E6EBA5006B43EB /* PokemonTableViewCell.swift in Sources */,

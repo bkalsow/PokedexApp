@@ -27,14 +27,13 @@ class PokedexViewController: UITableViewController {
         guard let d = try? Data(contentsOf: j)
             else { print("failed on d")
                 return
-                
         }
         
         guard let rootJSON = try? JSONSerialization.jsonObject(with: d, options: [])
             else{ print("failed on rootJSON")
                 return
         }
-
+        
         if let JSON = rootJSON as? [String: Any] {
             print("attempting to parse")
             let pokemon = Pokemon()
@@ -42,7 +41,6 @@ class PokedexViewController: UITableViewController {
             pokemon.name = (JSON["name"] as? String)!
             pokemonArray.append(pokemon)
             print("Pokemon Name" + pokemon.name)
-            
         }
         
         self.tableView.reloadData()

@@ -25,27 +25,27 @@ class PokedexViewController: UITableViewController {
         }
         
         guard let d = try? Data(contentsOf: j)
-            else { print("failed")
+            else { print("failed on d")
                 return
                 
         }
         
         guard let rootJSON = try? JSONSerialization.jsonObject(with: d, options: [])
-            else{ print("failedh")
+            else{ print("failed on rootJSON")
                 return
-                
         }
-        
+
         if let JSON = rootJSON as? [String: Any] {
+            print("attempting to parse")
             let pokemon = Pokemon()
-            pokemon.id = (JSON["id"] as? IntegerLiteralType)!
+            pokemon.id = (JSON["id"] as? Int)!
             pokemon.name = (JSON["name"] as? String)!
             pokemonArray.append(pokemon)
             print("Pokemon Name" + pokemon.name)
             
-            self.tableView.reloadData()
-            
         }
+        
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,3 +65,6 @@ class PokedexViewController: UITableViewController {
     }
 }
 
+extension UICollectionView {
+    
+}

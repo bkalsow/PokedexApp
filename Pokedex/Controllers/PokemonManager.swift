@@ -21,10 +21,10 @@ struct PokemonManager {
         self.resourceURL = resourceURL
     }
     
-    func getPokemon(completion: @escaping(Result<[Pokemon], Error>)) -> Void) {
-    let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, _/ _ in
-    guard let jsonData = data else {
-    completion(.failure(.noDataAvailible))
+    func getPokemon(completion: (Result<[Pokemon], Error>)) -> Void {
+        let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _/ _ in
+            guard let jsonData = data else {
+                completion(.failure(.noDataAvailible))
     }
     
     do {

@@ -25,18 +25,17 @@ struct PokemonManager {
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _/ _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailible))
-    }
+            }
     
-    do {
-        let decoder = JSONDecoder()
-    let pokemonResponse = try decoder.decode(pokemonResponse.self, from: jasonData
-    let pokemonDetails = pokemonResponse.response.pokemon
-    completion(.success(pokemonDetails))
-    }catch {
-    conpletion(.failure(.cannotProcessData))
-    }
-    }
-    
-    dataTask.resume()
+            do {
+                let decoder = JSONDecoder()
+                let pokemonResponse = try decoder.decode(pokemonResponse.self, from: jasonData
+                let pokemonDetails = pokemonResponse.response.pokemon
+                completion(.success(pokemonDetails))
+            }catch {
+                conpletion(.failure(.cannotProcessData))
+            }
+        }
+        dataTask.resume()
     }
 }
